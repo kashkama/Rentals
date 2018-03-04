@@ -14,7 +14,15 @@ export const rental = (state={}, action) => {
                 timestamp: action.timestamp
             };
         case C.RATE_RENTAL:
-            return 
+            return (state.id !== action.id) ?
+                state :
+                Object.assign(
+                    {},
+                    state,
+                    {
+                        rating: action.rating
+                    }
+                );
         default:
             return state;
     }
@@ -29,7 +37,7 @@ export const rentals = (state=[], action) => {
             ];
         case C.RATE_RENTAL:
             return state.map(
-                rental => rental(rental, action)
+                r => rental(r, action)
             );
         case C.REMOVE_RENTAL:
             return state.filter(
@@ -41,5 +49,10 @@ export const rentals = (state=[], action) => {
 };
 
 export const sort = (state="SORT_BY_DATE", action) => {
-    
+    switch(action.type) {
+        case C.SORT_RENTALS:
+            return action.sortBy;
+        default:
+            return state;
+    }
 };
