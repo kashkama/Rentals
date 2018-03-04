@@ -1,14 +1,21 @@
 import {contants as C} from "./../utils/contants";
 import {v4} from "uuid";
 
-export const addRental = (title, image, location, id, rating, price, owner, timestamp) => ({
+export const addRental = (title, image, location, rating, price, owner) => ({
     type: C.ADD_RENTAL,
     title,
     image,
     location,
-    id,
-    rating,
+    id: v4(),
+    rating:0,
     price,
     owner,
-    timestamp
+    timestamp: new Date().toDateString()
 });
+
+export const removeRental = (id) => (
+    {
+        type: C.REMOVE_RENTAL,
+        id
+    }
+);

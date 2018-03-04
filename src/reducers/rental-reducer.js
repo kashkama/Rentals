@@ -13,6 +13,8 @@ export const rental = (state={}, action) => {
                 owner: action.owner,
                 timestamp: action.timestamp
             };
+        case C.RATE_RENTAL:
+            return 
         default:
             return state;
     }
@@ -25,6 +27,14 @@ export const rentals = (state=[], action) => {
                 ...state,
                 rental({}, action)
             ];
+        case C.RATE_RENTAL:
+            return state.map(
+                rental => rental(rental, action)
+            );
+        case C.REMOVE_RENTAL:
+            return state.filter(
+                rental => rental.id !== action.id
+            );
         default:
             return state;
     }
