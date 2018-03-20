@@ -81,7 +81,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "template.ejs",
             appMountId: "root",
-            title: "Queue",
+            title: "Rentals",
             filename: resolve(__dirname, "dist", "index.html")
         }),
         new CleanWebpackPlugin(["dist"])
