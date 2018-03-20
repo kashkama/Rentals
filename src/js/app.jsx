@@ -1,4 +1,5 @@
 import React from "react";
+import "./../scss/app.scss";
 import AddRentalForm from "./components/add-rental-form";
 import RentalList from "./components/rental-list";
 import PropTypes from "prop-types";

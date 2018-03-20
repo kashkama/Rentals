@@ -21,10 +21,9 @@ class Rental extends React.Component {
                     <h4>{image}</h4>
                 </div>
                 <div className="information">
-                    <h4>location,{location}</h4>
-                    <h4>{rating}</h4>
-                    <h4>USD{price}</h4>
-                    <h4>owner, {owner}</h4>
+                    <h4>location:{location}</h4>
+                    <h4>${price}</h4>
+                    <h4>owner:{owner}</h4>
                     <button
                         onClick={() =>
                             store.dispatch(removeRental(id))
