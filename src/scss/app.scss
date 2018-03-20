@@ -1,7 +1,10 @@
+$font-stack: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+$primary-color: #f5cdcd;
+
 html {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family: $font-stack;
 }
 
 body {
-    background: #f5cdcd;
+    background: $primary-color;
 }
