@@ -1,7 +1,7 @@
 import React from "react";
 import StarRating from "./star-rating";
 import PropTypes from "prop-types";
-import { removeRental } from "../../actions/creators";
+import { removeRental, rateRental } from "../../actions/creators";
 
 class Rental extends React.Component {
 
@@ -14,19 +14,29 @@ class Rental extends React.Component {
         const {store} = this.context;
         return(
             <section className="rental" style={this.style}>
-                <h2>{title}</h2>
-                <h4>{image}</h4>
-                <h4>location,{location}</h4>
-                <h4>{rating}</h4>
-                <h4>USD{price}</h4>
-                <h4>owner, {owner}</h4>
-                <button
-                    onClick={() =>
-                        store.dispatch(removeRental(id))
-                    }
-                >remove rental</button>
+                <div className="title">
+                    <h2>{title}</h2>
+                </div>
+                <div className="image">
+                    <h4>{image}</h4>
+                </div>
+                <div className="information">
+                    <h4>location,{location}</h4>
+                    <h4>{rating}</h4>
+                    <h4>USD{price}</h4>
+                    <h4>owner, {owner}</h4>
+                    <button
+                        onClick={() =>
+                            store.dispatch(removeRental(id))
+                        }
+                    >remove rental</button>
+                    <StarRating starsSelected={rating}
+                        onRate={rating => store.dispatch(rateRental(id, rating))}
+                    />
+                </div>
+                <hr/>
             </section>
-        )
+        );
     }
 }
 
