@@ -24,7 +24,7 @@ class App extends React.Component{
 
     render(){
         const {store} = this.props;
-        const {rentals} = store.getState();
+        const {rentals, sort} = store.getState();
         return(
             <div>
                 <AddRentalForm/>
