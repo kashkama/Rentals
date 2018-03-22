@@ -21,5 +21,5 @@ export const data = {
             timestamp: "Sat Mar 12 2017 16:12:09 GMT-0800 (PST)"
         }
     ],
-    sort: "SORT_BY_DATE"
+    sort: "SORTED_BY_DATE"
 };

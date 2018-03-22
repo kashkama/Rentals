@@ -48,7 +48,7 @@ export const rentals = (state=[], action) => {
     }
 };
 
-export const sort = (state="SORT_BY_DATE", action) => {
+export const sort = (state="SORTED_BY_DATE", action) => {
     switch(action.type) {
         case C.SORT_RENTALS:
             return action.sortBy;

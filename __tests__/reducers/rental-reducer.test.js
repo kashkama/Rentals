@@ -41,6 +41,7 @@ describe("rental Reducer", () => {
 
     test("should update rating of a rental", () => {
         const {title, image, location, price, owner} = sampleRental;
+        // create another rental state 
         const rentalTwo = rentals([], addRental(title, image, location, price, owner));
         action = rateRental(rentalTwo[0].id, 4);
         expect(rentals(rentalTwo, action)).toEqual([
