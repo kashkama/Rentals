@@ -10,7 +10,7 @@ export const addRental = (title, image, location, price, owner) => ({
     rating: 0,
     price,
     owner,
-    timestamp: new Date().toDateString()
+    timestamp: new Date().toString()
 });
 
 export const removeRental = (id) => (
