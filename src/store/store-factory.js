@@ -1,4 +1,3 @@
-import React from "react";
 import {createStore, combineReducers, applyMiddleware} from "redux";
 import {rentals, sort} from "./../reducers/rental-reducer";
 import {data} from "./../data/rentals";
