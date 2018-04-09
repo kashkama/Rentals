@@ -14,9 +14,9 @@ class Rental extends React.Component {
         const {store} = this.context;
         return(
             <section className="rental" style={this.style}>
-                <div className="title">
+                <header className="title">
                     <h2>{title}</h2>
-                </div>
+                </header>
                 <div className="image">
                     <h4>{image}</h4>
                 </div>

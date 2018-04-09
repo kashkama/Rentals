@@ -34,8 +34,10 @@ class App extends React.Component{
             <section className="app">
                 <SortMenu/>
                 <AddRentalForm/>
-                {/* pass sorted rentals as props to child components */}
-                <RentalList rentals={sortedRentals}/>
+                <main className="main-container" role="main">
+                    {/* pass sorted rentals as props to child components */}
+                    <RentalList rentals={sortedRentals}/>
+                </main>
             </section>
         );
     }

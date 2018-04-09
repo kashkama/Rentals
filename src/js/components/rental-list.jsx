@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const RentalList = ({rentals=[]}) => {
     return(
-        <div className="rental-list">
+        <article className="rental-container flex-container">
             {
                 //validate presence of rentals
                 (rentals.length === 0) ?
@@ -16,7 +16,7 @@ const RentalList = ({rentals=[]}) => {
                         />
                     )   
             }
-        </div>
+        </article>
     );
 };
 
