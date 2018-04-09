@@ -12,20 +12,24 @@ const options = {
 
 const SortMenu = (props, {store}) => {
     return (
-        <nav className="menu">
+        <nav className="main-nav" role="navigation">
             <h2>Sort Rentals</h2>
-            {
-                Object.keys(options).map((item, i) =>
-                    <a key={i} href="#" 
-                        className={(store.getState().sort === options[item]) ? "selected" : null}
-                        onClick={e => {
-                            e.preventDefault();
-                            store.dispatch(sortRentals(item));
-                        }}
-                    >{item}
-                    </a>
-                )
-            }
+            <ul className="nav-container">
+                {
+                    Object.keys(options).map((item, i) =>
+                        <li>
+                            <a key={i} href="#" 
+                                className={(store.getState().sort === options[item]) ? "selected" : null}
+                                onClick={e => {
+                                    e.preventDefault();
+                                    store.dispatch(sortRentals(item));
+                                }}
+                            >{item}
+                            </a>
+                        </li>
+                    )
+                }
+            </ul>
         </nav>
     );
 };

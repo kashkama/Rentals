@@ -31,12 +31,12 @@ class App extends React.Component{
         // sort rentals in state according to sort value(by date, by price, by time)
         const sortedRentals = [...rentals].sort(sortFunction(sort));
         return(
-            <div className="app">
+            <section className="app">
                 <SortMenu/>
                 <AddRentalForm/>
                 {/* pass sorted rentals as props to child components */}
                 <RentalList rentals={sortedRentals}/>
-            </div>
+            </section>
         );
     }
 }

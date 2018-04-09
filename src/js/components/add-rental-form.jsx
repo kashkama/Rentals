@@ -24,14 +24,31 @@ const AddRentalForm = (props, {store}) => {
     };
 
     return(
-        <form className="add-rental" onSubmit={submit}>
-            <input type="text" ref={input => _title = input} placeholder="rental title..." required/>
-            <input type="text" ref={input => _image = input} placeholder="rental image..." required/>
-            <input type="text" ref={input => _location = input} placeholder="rental location..." required/>
-            <input type="number" ref={input => _price = input} placeholder="rental price..." required/>
-            <input type="text" ref={input => _owner = input} placeholder="rental owner..." required/>
-            <button className="btn">ADD RENTAL</button>
-        </form>
+        <div className="rental-form" role="form">
+            <header>
+                <h3>Have a rental? Fill below</h3>
+            </header>
+            <form onSubmit={submit}>
+                <div className="flex-container">
+                    <label className="label-col">Title:
+                        <input className="field title" type="text" ref={input => _title = input} placeholder="rental title..." required/>
+                    </label>
+                    <label className="label-col">Image:
+                        <input className="field image" type="text" ref={input => _image = input} placeholder="rental image..." required/>
+                    </label>
+                    <label className="label-col">Location:
+                        <input className="field location" type="text" ref={input => _location = input} placeholder="rental location..." required/>
+                    </label>
+                    <label className="label-col">Price:
+                        <input className="field price" type="number" ref={input => _price = input} placeholder="rental price..." required/>
+                    </label>
+                    <label className="label-col">Owner:
+                        <input className="field owner" type="text" ref={input => _owner = input} placeholder="rental owner..." required/>
+                    </label>
+                </div>
+                <button>ADD RENTAL</button>
+            </form>
+        </div>
     );
 };
 
