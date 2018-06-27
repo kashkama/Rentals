@@ -1,8 +1,5 @@
 import React from "react";
 import "./../scss/app.scss";
-import AddRentalForm from "./components/add-rental-form";
-import SortMenu from "./components/sort-menu";
-import RentalList from "./components/rental-list";
 import {sortFunction} from "./../lib/sort-helper";
 import PropTypes from "prop-types";
 
@@ -32,12 +29,10 @@ class App extends React.Component{
         const sortedRentals = [...rentals].sort(sortFunction(sort));
         return(
             <section className="app">
-                <SortMenu/>
-                <AddRentalForm/>
-                <main className="main-container" role="main">
-                    {/* pass sorted rentals as props to child components */}
-                    <RentalList rentals={sortedRentals}/>
-                </main>
+                {/* wrapping presentational components in container components */}
+                <Menu/>
+                <NewRental/>
+                <Rentals/>
             </section>
         );
     }

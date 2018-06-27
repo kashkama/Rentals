@@ -40,6 +40,7 @@ class Rental extends React.Component {
 }
 
 Rental.propTypes = {
+    id: PropTypes.string,
     title: PropTypes.string,
     image: PropTypes.string,
     location: PropTypes.string,
