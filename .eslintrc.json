@@ -28,7 +28,7 @@
         "react/prop-types": 2,
         "indent": [
             "error",
-            "tab", {"SwitchCase": 1}
+            4, {"SwitchCase": 1}
         ],
         "SwitchCase": 0,
         "linebreak-style": [

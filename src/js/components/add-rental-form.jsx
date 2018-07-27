@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {addRental} from "./../../actions/creators";
 
 const AddRentalForm = ({onNewRental=f=>f}) => {
 	//input values are stored in the variables
@@ -47,7 +46,7 @@ const AddRentalForm = ({onNewRental=f=>f}) => {
 };
 
 AddRentalForm.propTypes = {
-	onNewRental: PropTypes.function.isRequired
+	onNewRental: PropTypes.func.isRequired
 };
 
 export default AddRentalForm;

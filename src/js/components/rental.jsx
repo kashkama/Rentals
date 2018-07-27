@@ -1,7 +1,6 @@
 import React from "react";
 import StarRating from "./star-rating";
 import PropTypes from "prop-types";
-import { removeRental, rateRental } from "../../actions/creators";
 
 class Rental extends React.Component {
 
@@ -10,8 +9,7 @@ class Rental extends React.Component {
     }
 
     render() {
-        const {title, image, location, id, rating, price, owner} = this.props;
-        const {store} = this.context;
+        const {title, image, location, id, rating, price, owner, onRemove, onRate} = this.props;
         return(
             <section className="rental" style={this.style}>
                 <header className="title">
@@ -25,12 +23,10 @@ class Rental extends React.Component {
                     <h4>${price}</h4>
                     <h4>owner:{owner}</h4>
                     <button
-                        onClick={() =>
-                            store.dispatch(removeRental(id))
-                        }
+                        onClick={onRemove}
                     >remove rental</button>
                     <StarRating starsSelected={rating}
-                        onRate={rating => store.dispatch(rateRental(id, rating))}
+                        onRate={onRate}
                     />
                 </div>
                 <hr/>
@@ -51,8 +47,9 @@ Rental.propTypes = {
     onRate: PropTypes.func 
 };
 
-Rental.contextTypes = {
-    store: PropTypes.object
+Rental.defaultProps = {
+    onRemove: f=>f,
+    onRate: f=>f
 };
 
 export default Rental;
