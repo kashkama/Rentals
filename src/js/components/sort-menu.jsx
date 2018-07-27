@@ -16,8 +16,8 @@ const SortMenu = ({sort="SORTED_BY_DATE", onSelect=f=>f}) => {
 			<ul className="nav-container">
 				{
 					Object.keys(options).map((item, i) =>
-						<li>
-							<a key={i} href="#" 
+						<li  key={i}>
+							<a href="#" 
 								className={(sort === options[item]) ? "selected" : null}
 								onClick={e => {
 									e.preventDefault();

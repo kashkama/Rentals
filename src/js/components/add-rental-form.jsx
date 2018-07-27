@@ -8,11 +8,11 @@ const AddRentalForm = ({onNewRental=f=>f}) => {
 	//use refs to collect inputs add dispatch the add action
 	const submit = e => {
 		e.preventDefault();
-		onNewRental(_title.value,	_image.value, _location.value,	_price.value,	_owner.value);
+		onNewRental(_title.value,	_image.value, _location.value,  _price.value,	_owner.value);
 		_title.value = "";
 		_image.value = "";
 		_location.value = "";
-		_price.value = "USD";
+		_price.value = "";
 		_owner.value = "";
 	};
 
@@ -33,7 +33,7 @@ const AddRentalForm = ({onNewRental=f=>f}) => {
 						<input className="field location" type="text" ref={input => _location = input} placeholder="rental location..." required/>
 					</label>
 					<label className="label-col">Price:
-						<input className="field price" type="number" ref={input => _price = input} placeholder="rental price..." required/>
+						<input className="field price" type="number" ref={input => _price = input} placeholder="rental price $..." required/>
 					</label>
 					<label className="label-col">Owner:
 						<input className="field owner" type="text" ref={input => _owner = input} placeholder="rental owner..." required/>
