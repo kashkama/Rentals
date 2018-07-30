@@ -29,14 +29,14 @@ export const rateRental = (id, rating) => (
 );
 
 export const sortRentals = sortBy => 
-    (sortBy === "rating") ?
+    (sortBy === "SORTED_BY_RATING") ?
         (
             {
                 type: C.SORT_RENTALS,
                 sortBy: "SORTED_BY_RATING"
             }
         ):
-        (sortBy === "price") ?
+        (sortBy === "SORTED_BY_PRICE") ?
             ({
                 type: C.SORT_RENTALS,
                 sortBy: "SORTED_BY_PRICE"

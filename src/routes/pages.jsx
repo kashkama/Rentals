@@ -1,6 +1,6 @@
 import React from "react";
 import {MainMenu, AboutMenu} from "./main-menu";
-import {Link, Route} from "react-router-dom";
+import {Route} from "react-router-dom";
 
 export const PageTemplate = ({children}) => {
     return (
@@ -15,7 +15,7 @@ export const Home = () =>
     <PageTemplate>
         <section className="home">
         </section>
-    </PageTemplate>
+    </PageTemplate>;
 
 export const About = ({match}) => 
     <PageTemplate>
