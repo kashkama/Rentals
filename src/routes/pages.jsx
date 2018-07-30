@@ -1,6 +1,7 @@
 import React from "react";
 import {MainMenu, AboutMenu} from "./main-menu";
 import {Route} from "react-router-dom";
+import PropTypes from "prop-types";
 
 export const PageTemplate = ({children}) => {
     return (
@@ -9,6 +10,10 @@ export const PageTemplate = ({children}) => {
             {children}
         </div>
     );
+};
+
+PageTemplate.propTypes = {
+    children: PropTypes.func
 };
 
 export const Home = () => 
@@ -26,6 +31,10 @@ export const About = ({match}) =>
             <Route path="/about/location" component={Location}/>
         </section>
     </PageTemplate>;
+
+About.propTypes = {
+    match: PropTypes.object
+};
 
 export const Events = () =>
     <PageTemplate>
@@ -81,3 +90,7 @@ export const Whoops404 = ({location}) =>
     <div className="whoops-404">
         <h1>Resource not found at "{location.pathname}"</h1>
     </div>;
+
+Whoops404.propTypes = {
+    location: PropTypes.object
+};
