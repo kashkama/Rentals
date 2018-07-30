@@ -1,7 +1,6 @@
 import React from "react";
 import "./../scss/app.scss";
 import {NewRental, Menu, Rentals} from "./containers";
-import PropTypes from "prop-types";
 
 
 // class App extends React.Component{

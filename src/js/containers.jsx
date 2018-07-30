@@ -1,4 +1,3 @@
-import React from "react";
 import { connect } from "react-redux";
 import AddRentalForm from "./components/add-rental-form";
 import SortMenu from "./components/sort-menu";
