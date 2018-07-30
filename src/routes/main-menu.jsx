@@ -11,9 +11,9 @@ const selectedStyle = {
 export const MainMenu = () => 
     <nav className="main-menu">
         <NavLink to="/"><HomeIcon/></NavLink>
-        <NavLink to="/about" activeStyle={selectedStyle}>[About]</NavLink>
-        <NavLink to="/events" activeStyle={selectedStyle}>[Events]</NavLink>
         <NavLink to="/rentals" activeStyle={selectedStyle}>[Rentals]</NavLink>
+        <NavLink to="/events" activeStyle={selectedStyle}>[Events]</NavLink>
+        <NavLink to="/about" activeStyle={selectedStyle}>[About]</NavLink>
         <NavLink to="/contact" activeStyle={selectedStyle}>[Contact Us]</NavLink>
     </nav>;
 
@@ -48,5 +48,5 @@ export const AboutMenu = ({match}) => {
 };
 
 AboutMenu.propTypes = {
-    match : PropTypes.array
+    match : PropTypes.object
 };
