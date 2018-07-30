@@ -13,7 +13,7 @@ export const PageTemplate = ({children}) => {
 };
 
 PageTemplate.propTypes = {
-    children: PropTypes.func
+    children: PropTypes.object
 };
 
 export const Home = () => 

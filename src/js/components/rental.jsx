@@ -37,7 +37,6 @@ class Rental extends React.Component {
 
 Rental.propTypes = {
     title: PropTypes.string,
-    image: PropTypes.string,
     location: PropTypes.string,
     price: PropTypes.number,
     rating: PropTypes.number,
