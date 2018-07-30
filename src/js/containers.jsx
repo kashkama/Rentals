@@ -11,7 +11,7 @@ export const NewRental = connect(
     dispatch => 
         ({
             onNewRental(title, image, location, price, owner) {
-                dispatch(addRental(title, image, location, price, owner))
+                dispatch(addRental(title, image, location, price, owner));
             }
         })
 )(AddRentalForm);
@@ -25,7 +25,7 @@ export const Menu = connect(
     dispatch => 
         ({
             onSelect(sortBy) {
-                dispatch(sortRentals(sortBy))
+                dispatch(sortRentals(sortBy));
             }
         })	
 )(SortMenu);
@@ -39,10 +39,10 @@ export const Rentals = connect(
     dispatch => 
         ({
             onRemove(id) {
-                dispatch(removeRental(id))
+                dispatch(removeRental(id));
             },
             onRate(id, rating) {
-                dispatch(rateRental(id, rating))
+                dispatch(rateRental(id, rating));
             }
         })
 )(RentalList);
