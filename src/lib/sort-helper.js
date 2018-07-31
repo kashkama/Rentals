@@ -26,7 +26,7 @@ export const sortFunction = sort =>
 const getSortState = (sortBy = "date",
     stateHash ={
         date: "SORTED_BY_DATE",
-        price: "SORTED_By_PRICE",
+        price: "SORTED_BY_PRICE",
         rating: "SORTED_BY_RATING"
     }) => stateHash[sortBy];
 
