@@ -22,6 +22,7 @@ export const Home = () =>
         </section>
     </PageTemplate>;
 
+
 export const About = ({match}) => 
     <PageTemplate>
         <section className = "about">
@@ -31,6 +32,7 @@ export const About = ({match}) =>
             <Route path="/about/location" component={Location}/>
         </section>
     </PageTemplate>;
+
 
 About.propTypes = {
     match: PropTypes.object
@@ -43,12 +45,22 @@ export const Events = () =>
         </section>
     </PageTemplate>;
 
-export const Contact = () =>
+
+export const Contact = () =>    
     <PageTemplate>
         <section className="contact">
             <h1>[Contact Us]</h1>
         </section>
     </PageTemplate>;
+
+export const Whoops404 = ({location}) =>
+    <div className="whoops-404">
+        <h1>Resource not found at "{location.pathname}"</h1>
+    </div>;
+
+Whoops404.propTypes = {
+    location: PropTypes.object
+};
 
 export const Team = () =>
     <section className="teams">
@@ -85,12 +97,3 @@ export const Company = () =>
             sodales ligula in libero. 
         </p>
     </section>;
-
-export const Whoops404 = ({location}) =>
-    <div className="whoops-404">
-        <h1>Resource not found at "{location.pathname}"</h1>
-    </div>;
-
-Whoops404.propTypes = {
-    location: PropTypes.object
-};

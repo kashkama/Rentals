@@ -10,7 +10,7 @@ const sortBy = (type, field) => {
 };
 
 export const sortFunction = sort => 
-    (sort === "SORT_BY_DATE") ?
+    (sort === "SORTED_BY_DATE") ?
         sortBy("date", "timestamp") :
         (sort === "SORTED_BY_PRICE") ?
             sortBy("number-price", "price") :
