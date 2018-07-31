@@ -1,5 +1,5 @@
 import {createStore, combineReducers, applyMiddleware} from "redux";
-import {rentals, sort} from "./../reducers/rental-reducer";
+import {rentals} from "./../reducers/rental-reducer";
 import {data} from "./../data/rentals";
 
 const logger = store => next => action => {
@@ -20,7 +20,7 @@ const saver = store => next => action => {
 
 export const storeFactory = (stateData = data) =>
     applyMiddleware(logger, saver)(createStore)(
-        combineReducers({rentals, sort}),
+        combineReducers({rentals}),
         (localStorage["redux-store-rentals"]) ?
             JSON.parse(localStorage["redux-store-rentals"]):
             stateData

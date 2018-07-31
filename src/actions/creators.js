@@ -27,21 +27,3 @@ export const rateRental = (id, rating) => (
         rating
     }
 );
-
-export const sortRentals = sortBy => 
-    (sortBy === "SORTED_BY_RATING") ?
-        (
-            {
-                type: C.SORT_RENTALS,
-                sortBy: "SORTED_BY_RATING"
-            }
-        ):
-        (sortBy === "SORTED_BY_PRICE") ?
-            ({
-                type: C.SORT_RENTALS,
-                sortBy: "SORTED_BY_PRICE"
-            }):
-            ({
-                type: C.SORT_RENTALS,
-                sortBy: "SORTED_BY_DATE"
-            });

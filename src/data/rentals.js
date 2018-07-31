@@ -15,11 +15,10 @@ export const data = {
             image: "https://upload/apept.jpg",
             location: "Kiambu",
             id: "832fj392wf798",
-            rating: 4,
+            rating: 2,
             price: 800,
             owner: "Lucy",
             timestamp: "Sat Mar 12 2017 16:12:09 GMT-0800 (PST)"
         }
-    ],
-    sort: "SORTED_BY_DATE"
+    ]
 };

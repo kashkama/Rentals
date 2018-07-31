@@ -1,17 +1,41 @@
-const sortBy = (type, field) => {
-    switch(type) {
-        case "date":
-            return (a,b) => new Date(b[field]) - new Date(a[field]);
-        case "number-price":
-            return (a,b) => b[field] - a[field];
-        default:
-            return (a,b) => b[field] - a[field];
-    }
-};
+import { compose } from "redux";
 
-export const sortFunction = sort => 
+const sortByDate = field => 
+    (a,b) => new Date(b[field]) - new Date(a[field]);
+
+const sortByPrice = field =>
+    (a,b) => b[field] - a[field];
+
+const sortByRating = field => 
+    (a,b) => b[field] - a[field];
+
+const whichSort = (type, field) =>
+    (type === "date") ?
+        sortByDate(field) :
+        (type === "number") ?
+            sortByRating(field):
+            sortByPrice(field);
+
+export const sortFunction = sort =>
     (sort === "SORTED_BY_DATE") ?
-        sortBy("date", "timestamp") :
-        (sort === "SORTED_BY_PRICE") ?
-            sortBy("number-price", "price") :
-            sortBy("number", "rating");
+        whichSort("date", "timestamp") :
+        (sort === "SORTED_BY_RATING") ?
+            whichSort("number", "rating") :
+            whichSort("number-price", "price");
+
+const getSortState = (sortBy = "date",
+    stateHash ={
+        date: "SORTED_BY_DATE",
+        price: "SORTED_By_PRICE",
+        rating: "SORTED_BY_RATING"
+    }) => stateHash[sortBy];
+
+const locateSortFunction = compose(
+    sortFunction,
+    getSortState
+);
+
+export const sortRentals = (rentals, sortBy) => compose(
+    fn => [...rentals].sort(fn),  
+    locateSortFunction
+)(sortBy);

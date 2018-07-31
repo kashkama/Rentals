@@ -1,4 +1,4 @@
-import {rental, rentals, sort} from "./../../src/reducers/rental-reducer";
+import {rental, rentals} from "./../../src/reducers/rental-reducer";
 import {addRental, removeRental, rateRental} from "./../../src/actions/creators";
 
 describe("rental Reducer", () => {

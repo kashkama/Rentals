@@ -1,41 +1,21 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./../../scss/components/menu.scss";
 
-// choose ways to sort rentals
-const options = {
-    date: "SORTED_BY_DATE",
-    price: "SORTED_BY_PRICE",
-    rating: "SORTED_BY_RATING"
+const selectedStyle = { 
+    color : "red" 
 };
 
-const SortMenu = ({sort="SORTED_BY_DATE", onSelect=f=>f}) => {
-    return (
-        <nav className="main-nav" role="navigation">
-            <h2>Sort Rentals</h2>
-            <ul className="nav-container">
-                {
-                    Object.keys(options).map((item, i) =>
-                        <li  key={i}>
-                            <a href="#" 
-                                className={(sort === options[item]) ? "selected" : null}
-                                onClick={e => {
-                                    e.preventDefault();
-                                    onSelect(options[item]);
-                                }}
-                            >{item}
-                            </a>
-                        </li>
-                    )
-                }
-            </ul>
-        </nav>
-    );
-};
+const SortMenu = ({ match }) => 
+    <nav className="menu">
+        <NavLink to="/rentals" style={match.isExact && selectedStyle}>date</NavLink>
+        <NavLink to="/rentals/sort/price" activeStyle={selectedStyle}>price</NavLink>
+        <NavLink to="/rentals/sort/rating" activeStyle={selectedStyle}>rating</NavLink>
+    </nav>;
 
 SortMenu.propTypes = {
-    sort: PropTypes.string.isRequired,
-    onSelect: PropTypes.func.isRequired
+    match: PropTypes.object
 };
 
 export default SortMenu;

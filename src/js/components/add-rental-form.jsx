@@ -8,7 +8,7 @@ const AddRentalForm = ({onNewRental=f=>f}) => {
     //use refs to collect inputs add dispatch the add action
     const submit = e => {
         e.preventDefault();
-        onNewRental(_title.value,	_image.value, _location.value,  _price.value,	_owner.value);
+        onNewRental(_title.value,	_image.value, _location.value,  parseInt(_price.value),	_owner.value);
         _title.value = "";
         _image.value = "";
         _location.value = "";

@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import {NewRental, Menu, Rentals, Rental} from "./containers";
+import SortMenu from "./components/sort-menu";
+import {NewRental, Rentals, Rental} from "./containers";
 import "./../scss/app.scss";
 import { PageTemplate, Home, About, Events, Contact, Whoops404} from "./../routes/pages";
 
@@ -8,15 +9,16 @@ const App = () => {
     return  (
         <Switch>
             <Route exact path="/" component={Home}/>
-            <Route path="/:id" component={Rental}/>
-            <Route exact path="/rentals"
+            {/* <Route path="/:id" component={Rental}/> */}
+            <Route path="/rentals"
                 component ={ () => 
                     (
                         <PageTemplate>
                             <section className="app">
-                                <Menu/>
+                                <Route component={SortMenu}/>
                                 <NewRental/>
-                                <Rentals/>
+                                <Route exact path="/rentals" component={Rentals}/>
+                                <Route path="/rentals/sort/:sort" component={Rentals}/>
                             </section>
                         </PageTemplate>
                     )

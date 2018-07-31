@@ -1,10 +1,9 @@
 import { connect } from "react-redux";
 import AddRentalForm from "./components/add-rental-form";
-import SortMenu from "./components/sort-menu";
 import RentalList from "./components/rental-list";
 import RentalDetails from "./components/rental-details";
-import {addRental, sortRentals, rateRental, removeRental} from "./../actions/creators";
-import {sortFunction} from "./../lib/sort-helper";
+import {addRental, rateRental, removeRental} from "./../actions/creators";
+import {sortRentals} from "./../lib/sort-helper";
 import {findById} from "./../lib/rental-helper";
 
 export const NewRental = connect(
@@ -17,25 +16,10 @@ export const NewRental = connect(
         })
 )(AddRentalForm);
 
-
-export const Menu = connect(
-    state => 
-        ({
-            sort: state.sort
-        }),
-    dispatch => 
-        ({
-            onSelect(sortBy) {
-                dispatch(sortRentals(sortBy));
-            }
-        })	
-)(SortMenu);
-
-
 export const Rentals = connect(
-    state => 
+    ({rentals}, {match}) => 
         ({
-            rentals: [...state.rentals].sort(sortFunction(state.sort))
+            rentals: sortRentals(rentals, match.params.sort)
         }),
     dispatch => 
         ({
