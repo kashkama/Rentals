@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import {NewRental, Menu, Rentals} from "./containers";
+import {NewRental, Menu, Rentals, Rental} from "./containers";
 import "./../scss/app.scss";
 import { PageTemplate, Home, About, Events, Contact, Whoops404} from "./../routes/pages";
 
@@ -8,6 +8,7 @@ const App = () => {
     return  (
         <Switch>
             <Route exact path="/" component={Home}/>
+            <Route path="/:id" component={Rental}/>
             <Route exact path="/rentals"
                 component ={ () => 
                     (

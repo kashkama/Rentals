@@ -7,7 +7,7 @@ const RentalDetails = ({title, image, location, price, owner, history}) => {
         (!title) ?
             <Whoops404 location={location}/> :
             <div className="rental-details"
-                style={{backgroundColor:white}}
+                style={{backgroundColor:"white"}}
                 onClick={() => history.goBack()}
             >
                 <h2>{title}</h2>
