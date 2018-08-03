@@ -3,7 +3,7 @@ export const data = {
         {
             title: "Jest Properties",
             image: "https://upload/appt.jpg",
-            location: "Nairobi",
+            loc: "Nairobi",
             id: "832f23f798",
             rating: 4,
             price: 400,
@@ -13,7 +13,7 @@ export const data = {
         {
             title: "Norman Merchants",
             image: "https://upload/apept.jpg",
-            location: "Kiambu",
+            loc: "Kiambu",
             id: "832fj392wf798",
             rating: 2,
             price: 800,

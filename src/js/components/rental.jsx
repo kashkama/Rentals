@@ -10,7 +10,7 @@ class Rental extends React.Component {
     }
 
     render() {
-        const {title, id, image, location, rating, price, owner, onRemove, onRate, history} = this.props;
+        const {title, id, image, loc, rating, price, owner, onRemove, onRate, history} = this.props;
         return(
             <section className="rental" style={this.style}>
                 <div
@@ -23,7 +23,7 @@ class Rental extends React.Component {
                         <h4>{image}</h4>
                     </div>
                     <div className="information">
-                        <h4>location:{location.toString()}</h4>
+                        <h4>location:{loc}</h4>
                         <h4>${price}</h4>
                         <h4>owner:{owner}</h4>
                         <button
@@ -42,8 +42,8 @@ class Rental extends React.Component {
 
 Rental.propTypes = {
     title: PropTypes.string,
-    id: PropTypes.string,
-    location: PropTypes.string,
+    id : PropTypes.string,
+    loc : PropTypes.string,
     price: PropTypes.number,
     rating: PropTypes.number,
     owner: PropTypes.string,

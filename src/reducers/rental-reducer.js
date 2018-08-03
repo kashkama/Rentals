@@ -6,7 +6,7 @@ export const rental = (state={}, action) => {
             return {
                 title: action.title,
                 image: action.image,
-                location: action.location,
+                loc: action.location,
                 id: action.id,
                 rating: action.rating,
                 price: action.price,
