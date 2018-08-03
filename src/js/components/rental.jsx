@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import StarRating from "./star-rating";
 import PropTypes from "prop-types";
 
@@ -13,7 +14,7 @@ class Rental extends React.Component {
         return(
             <section className="rental" style={this.style}>
                 <div
-                    onClick={() => history.push(`/${id}`)}
+                    onClick={() => history.push(`/rentals/${id}`)}
                 >                
                     <header className="title">
                         <h2>{title}</h2>
@@ -22,7 +23,7 @@ class Rental extends React.Component {
                         <h4>{image}</h4>
                     </div>
                     <div className="information">
-                        <h4>location:{location}</h4>
+                        <h4>location:{location.toString()}</h4>
                         <h4>${price}</h4>
                         <h4>owner:{owner}</h4>
                         <button
@@ -56,4 +57,4 @@ Rental.defaultProps = {
     onRate: f=>f
 };
 
-export default Rental;
+export default withRouter(Rental);

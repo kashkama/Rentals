@@ -9,7 +9,7 @@ const App = () => {
     return  (
         <Switch>
             <Route exact path="/" component={Home}/>
-            {/* <Route path="/:id" component={Rental}/> */}
+            <Route path="/rentals/:id" component={Rental}/>
             <Route path="/rentals"
                 component ={ () => 
                     (
